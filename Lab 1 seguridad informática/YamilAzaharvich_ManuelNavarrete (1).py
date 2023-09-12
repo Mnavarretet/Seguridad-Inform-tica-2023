@@ -4,6 +4,15 @@
 print("---------------------------------------------")
 print("Desafio 1\n")
 
+import requests
+
+headers = {
+    'Content-Type': 'text/plain',
+}
+
+response = requests.get('http://finis.malba.cl/GetMsg', headers=headers)
+
+
 #ROT
 def custom(i):
     if i>=0:
@@ -66,11 +75,29 @@ print("")
 print("Cifrado en Rot(7)")
 print(Rot(segundo_paso,7))
 
+import requests
+
+headers = {
+    'Content-Type': 'text/plain',
+}
+
+data = '{"msg":"ffxjwjnrr"}'
+
+response = requests.post('http://finis.malba.cl/SendMsg', headers=headers, data=data)
+print(response.text)
+
 #DESAFIO 2
 
 print("---------------------------------------------")
 print("Desafio 2\n")
+import requests
 
+headers = {
+    'Content-Type': 'text/plain',
+}
+
+response = requests.get('http://finis.malba.cl/GetMsg', headers=headers)
+print(response.text)
 #DESCIFRADO
 
 print("Descifrado en Rot -7")
@@ -86,3 +113,8 @@ print("")
 print("Descifrado en rot -15")
 print(Rot(segundo,-15))
 print("---------------------------------------------")
+
+
+
+
+
