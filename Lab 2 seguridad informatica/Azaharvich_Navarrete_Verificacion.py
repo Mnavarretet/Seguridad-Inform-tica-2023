@@ -1,8 +1,7 @@
 from ctypes.wintypes import PLARGE_INTEGER
 import hashlib 
-import rot
-import vigenere
-
+import Rot
+from Vigenere import cifrar, descifrar
 def LeerOriginal():
     archivo = open('mensajedeentrada.txt','r')
     aux = archivo.read()
@@ -60,7 +59,8 @@ print(texto)
 texto = rot(texto,12,"descifrar")
 print(texto)
 
-texto = vigenere("passwd",texto,'descifrar')
+texto = cifrar("passwd", texto)
+
 print(texto)
 
 texto = rot(texto,8,'descifrar')
